@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import Input from "./contactFormInput.styles";
+import { Input, Label } from "./contactFormLabeledInput.styles";
 
-const ContactFormInput = ({
+const ContactFormLabeledInput = ({
   type,
   name,
   pattern,
@@ -13,18 +13,22 @@ const ContactFormInput = ({
   onChange,
 }) => {
   return (
-    <Input
-      type={type}
-      name={name}
-      pattern={pattern}
-      title={title}
-      required={required}
-      value={value}
-      onChange={onChange}
-    />
+    <Label htmlFor={name}>
+      {" "}
+      {name}
+      <Input
+        type={type}
+        name={name}
+        pattern={pattern}
+        title={title}
+        required={required}
+        value={value}
+        onChange={onChange}
+      />
+    </Label>
   );
 };
-ContactFormInput.propTypes = {
+ContactFormLabeledInput.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   pattern: PropTypes.string.isRequired,
@@ -33,4 +37,4 @@ ContactFormInput.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
-export default ContactFormInput;
+export default ContactFormLabeledInput;

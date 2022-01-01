@@ -5,5 +5,9 @@ const Input = styled.input`
   width: 300px;
   padding: 5px;
 `;
+const Label = styled.label`
+display: block;
+margin-bottom: 15px;
+font-size 20px`;
 
-export default Input;
+export { Input, Label };
